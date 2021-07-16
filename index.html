@@ -9,20 +9,37 @@
     <div id="border">
     <h1>Simple Interest Calculator</h1>
 
-    Amount <input type="number" id="principal"> <br /><br>
+    Amount <input type="number" id="principal" value="1"> <span id="warning1"> </span> <br /><br>
     Rate <input type="range" id="rate" min="0" min="100" value="0.0">
     <span id="rangevalue">0.0%</span><br /><br>
-    No. of Years <input type="number" id="years"> <br />
+    No. of Years <input type="number" id="years" value="1"> <span id="warning"> </span> <br />
     <span id="result"></span><br>
 
     <button onclick="compute()">Compute</button>
     <script>
         var rangevalue = document.getElementById("rangevalue"); //percentage
+        var postyear = document.getElementById("years");//selecting years
+        var warn = document.getElementById("warning"); //warning
         var rate = document.getElementById("rate"); //slider
+        var princi = document.getElementById("principal");//principal
+        var warn1 = document.getElementById("warning1"); //warning
+        princi.addEventListener("input",()=>{
+            if(princi.value<=0){
+                warn1.innerHTML="please enter the positive value";
+            }else{
+                warn1.innerHTML="";
+            }
+        });
         rate.addEventListener("input", () => {
             rangevalue.innerHTML = rate.value + "%";
         });
-
+        postyear.addEventListener("input",()=>{
+            if(postyear.value<=0){
+                warn.innerHTML="please enter the positive value";
+            }else{
+                warn.innerHTML="";
+            }
+        });
         function compute() {
             p = document.getElementById("principal").value;
             r = document.getElementById("rate").value;

@@ -12,3 +12,6 @@ h1 {
   background-color: rgb(13, 199, 199);
   padding: 6;
 }
+#warning,#warning1{
+  color: red;
+}
