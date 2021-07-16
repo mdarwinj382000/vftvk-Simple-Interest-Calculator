@@ -6,9 +6,6 @@
 </head>
 
 <body>
-    <!-- //alert box on compute
-    // on ok of alert box focus on principal input 
-// color manipualting-->
     <div id="border">
     <h1>Web App – Simple Interest Calculator</h1>
 
@@ -50,10 +47,14 @@
             i = document.getElementById("result");
             var PNR = (p * r * y) / 100;
             var currentyear=new Date(new Date().setFullYear(new Date().getFullYear()+parseInt(y))).getFullYear();   
+            if(p>1&&r>1&&y>0){
             i.innerHTML =
                 "<br>If you deposit <mark>" + p + "</mark>, <br> at an interest rate of <mark>" + r +
                 "%</mark>. <br> You will receive an amount of <mark>" + PNR +
                 "</mark>, <br> in the year <mark>"+currentyear+"</mark><br>";
+            }else{
+                alert("bye da");
+            }
         }
     </script>
      <footer>
